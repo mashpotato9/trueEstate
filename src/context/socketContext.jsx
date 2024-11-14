@@ -9,7 +9,9 @@ export const SocketProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        setSocket(io("http://localhost:4000"));
+        setSocket(io(import.meta.env.VITE_SOCKET_URL, {
+            withCredentials: true,
+        }));
     }, []);
 
     useEffect(() => {
