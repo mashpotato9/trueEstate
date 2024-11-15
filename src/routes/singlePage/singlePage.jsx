@@ -31,7 +31,7 @@ function SinglePage() {
     const handleDelete = async () => {
         if (window.confirm('Are you sure you want to delete this post?')) {
             try {
-                await apiRequest.delete(`/api/posts/${post.id}`)
+                await apiRequest.delete(`/posts/${post.id}`)
                 navigate('/profile')
             } catch (err) {
                 console.error(err)
