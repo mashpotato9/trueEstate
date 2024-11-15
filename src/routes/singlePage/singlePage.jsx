@@ -12,7 +12,7 @@ function SinglePage() {
     const { currUser } = useContext(authContext)
     const navigate = useNavigate()
     const [saved, setSaved] = useState(post.isSaved)
-
+    const isOwner = currUser?.userInfo?.id === post.userId;
 
     const handleSave = async () => {
         if (!currUser) {
@@ -25,6 +25,18 @@ function SinglePage() {
         } catch (err) {
             setSaved(prev => !prev)
             console.error(err)
+        }
+    }
+
+    const handleDelete = async () => {
+        if (window.confirm('Are you sure you want to delete this post?')) {
+            try {
+                await apiRequest.delete(`/api/posts/${post.id}`)
+                navigate('/profile')
+            } catch (err) {
+                console.error(err)
+                alert('Failed to delete post')
+            }
         }
     }
     return (
@@ -41,10 +53,20 @@ function SinglePage() {
                                     <span>{post.address}</span>
                                 </div>
                                 <div className="price">$ {post.price}</div>
+                                {isOwner && (
+                                    <button 
+                                        className="deleteButton" 
+                                        onClick={handleDelete}
+                                    >
+                                        <img src="/delete.png" alt="" />
+                                        Delete Post
+                                    </button>
+                                )}
                             </div>
                             <div className="user">
                                 <img src={post.user.avatar} alt="" />
                                 <span>{post.user.username}</span>
+                                
                             </div>
                         </div>
                         <div className="bottom" dangerouslySetInnerHTML={{ 
