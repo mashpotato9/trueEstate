@@ -26,18 +26,7 @@ function RequireAuth() {
         return <Navigate to="/login" />
     }
 
-    return (
-        currUser && (
-            <div className="layout">
-                <div className="navbar">
-                    <NavBar />
-                </div>
-                <div className="content">
-                    <Outlet />
-                </div>
-            </div>
-        )
-    )
+    return <Outlet />
 }
 
 
