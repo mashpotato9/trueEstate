@@ -6,7 +6,6 @@ import { authContext } from '../../context/authContext.jsx'
 
 
 function Layout() {
-    console.log('Layout rendering');
 
     return (
         <div className="layout">
