@@ -6,6 +6,8 @@ import { authContext } from '../../context/authContext.jsx'
 
 
 function Layout() {
+    console.log('Layout rendering');
+
     return (
         <div className="layout">
             <div className="navbar">
@@ -26,7 +28,18 @@ function RequireAuth() {
         return <Navigate to="/login" />
     }
 
-    return <Outlet />
+    return (
+        currUser && (
+            <div className="layout">
+                <div className="navbar">
+                    <NavBar />
+                </div>
+                <div className="content">
+                    <Outlet />
+                </div>
+            </div>
+        )
+    )
 }
 
 

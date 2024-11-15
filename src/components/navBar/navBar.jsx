@@ -5,6 +5,8 @@ import { authContext } from '../../context/authContext'
 import { useStore } from '../../lib/notificationstore'
 
 function NavBar(){
+    console.log('NavBar rendering');
+
     const [open, setOpen] = useState(false)
     const {currUser} = useContext(authContext)
     const fetch = useStore(state => state.fetch)

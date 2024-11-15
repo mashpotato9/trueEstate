@@ -46,7 +46,7 @@ function App() {
       ]
     },
     {
-      
+      path: "/",
       element: <RequireAuth />,
       children: [
         {

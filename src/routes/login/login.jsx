@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../context/authContext.jsx";
 
 function Login() {
+  console.log('Login component rendering attempt');
+
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
