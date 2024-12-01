@@ -3,7 +3,7 @@
 A real estate platform demo built with React, featuring property listings, user authentication, and real-time chat.
 
 ## Live Demo & Repositories
-- Frontend Demo: [TrueEstate](https://true-estate-front-umber.vercel.app/) <br />
+- Demo: [TrueEstate](https://true-estate-front-umber.vercel.app/) <br />
 - Backend Code: [Github](https://github.com/mashpotato9/trueEstate_back) <br />
 - Socket Server: [Github](https://github.com/mashpotato9/trueEstate_socket)
 
