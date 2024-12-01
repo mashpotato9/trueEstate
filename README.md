@@ -11,7 +11,7 @@ A real estate platform demo built with React, featuring property listings, user 
 To explore all features, you can use this test account:
 ```bash
 Username: john
-Password: 123456
+Password: 123
 ```
 1. Viewing Property:
    - Click "Rent" in the search bar
